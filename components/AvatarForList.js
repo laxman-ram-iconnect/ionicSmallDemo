@@ -31,7 +31,7 @@ export default ListItemWithAvatar = (props) =>{
         bottomDivider
         rightTitle={<Text> {props.messageSent ?<Icon name="check-double"color="#3787db"/>: null} JAN 01 </Text>}
         rightSubtitle= {
-          <Badge status="primary" value="9" />
+            props.messageCount ? <Badge status="primary" value={props.messageCount} /> : null
         }
         
    /> );

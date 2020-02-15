@@ -12,75 +12,38 @@ const list = [
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
     subtitle: 'Vice President',
     color: 'green',
-    messageSent: true
+    messageSent: true,
+    messageCount: 6
   },
   {
     name: 'Chris Jackson',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman',
     color: 'orange',
-    messageSent: true
+    messageSent: true,
+    messageCount: 7
   },
   {
     name: 'Amy Farhan',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
     subtitle: 'Vice President',
     color: 'green',
-    messageSent: true
+    messageSent: true,
+    messageCount: 3
   },
   {
     name: 'Chris Jackson',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman',
-    color: 'orange'
+    color: 'orange',
+    messageCount: 9
   },
   {
     name: 'Amy Farhan',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
     subtitle: 'Vice President',
-    color: 'green'
-  },
-  {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman',
-    color: 'orange'
-  },
-  {
-    name: 'Amy Farhan',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President',
-    color: 'green'
-  },
-  {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman',
-    color: 'orange'
-  },
-  {
-    name: 'Amy Farhan',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President',
-    color: 'green'
-  },
-  {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman',
-    color: 'orange'
-  },
-  {
-    name: 'Amy Farhan',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President',
-    color: 'green'
-  },
-  {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman',
-    color: 'orange'
+    color: 'green',
+    messageCount: 0
   }
   // ... // more items
 
@@ -105,8 +68,7 @@ export default function HomeScreen() {
       {
     list.map((l, i) => (
       <ListItemWithAvatar 
-      name={l.name} avatar_url={l.avatar_url} subtitle={l.subtitle}
-      color={l.color} messageSent={l.messageSent} index={i} key={i}/>
+      {...l} index={i} key={i}/>
     // <Text>{i}</Text>
     ))
   }
