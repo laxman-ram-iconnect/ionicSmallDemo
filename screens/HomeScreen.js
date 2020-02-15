@@ -2,73 +2,20 @@ import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
-import { SearchBar } from 'react-native-elements';
+import SearchBarInput from '../components/SearchBar';
 import ListItemWithAvatar from '../components/AvatarForList';
-
-
-const list = [
-  {
-    name: 'Amy Farhan',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President',
-    color: 'green',
-    messageSent: true,
-    messageCount: 6
-  },
-  {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman',
-    color: 'orange',
-    messageSent: true,
-    messageCount: 7
-  },
-  {
-    name: 'Amy Farhan',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President',
-    color: 'green',
-    messageSent: true,
-    messageCount: 3
-  },
-  {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman',
-    color: 'orange',
-    messageCount: 9
-  },
-  {
-    name: 'Amy Farhan',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President',
-    color: 'green',
-    messageCount: 0
-  }
-  // ... // more items
-
-];
-
+import { chartData } from '../constants/dummyData';
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <SearchBar
-        placeholder="Search"
-        lightTheme={ true }
-        onChangeText={null}
-        round={ true }
-        value={null}
-        containerStyle= {{ backgroundColor: 'white', marginBottom: -4, borderTopWidth: 0}}
-        inputContainerStyle
-={{backgroundColor: '#eeeeee', paddingTop: 1}}
-      />
+      <SearchBarInput/>
 
       <ScrollView style={styles.container}>
       {
-    list.map((l, i) => (
+    chartData.map((l, i) => (
       <ListItemWithAvatar 
-      {...l} index={i} key={i}/>
+      {...l} index={i} key={i} showEditButton/>
     // <Text>{i}</Text>
     ))
   }

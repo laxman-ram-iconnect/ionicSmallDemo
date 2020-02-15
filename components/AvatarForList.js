@@ -25,14 +25,16 @@ export default ListItemWithAvatar = (props) =>{
    
    <ListItem
         key={props.index}
-        leftAvatar={<AvatarForList uri={props.avatar_url} color={props.color} showEditButton/>}
+        leftAvatar={<AvatarForList uri={props.avatar_url} color={props.color} showEditButton={props.showEditButton}/>}
         title={props.name}
         subtitle={props.subtitle}
         bottomDivider
-        rightTitle={<Text> {props.messageSent ?<Icon name="check-double"color="#3787db"/>: null} JAN 01 </Text>}
+        rightTitle={<Text> {props.messageSent ?<Icon name="check-double"color="#3787db"/>: null} 
+        { props.showEditButton ? 'JAN 01' : null} </Text>}
         rightSubtitle= {
             props.messageCount ? <Badge status="primary" value={props.messageCount} /> : null
         }
+        containerStyle={{ ... props.containerStyle}}
         
    /> );
 }

@@ -1,14 +1,35 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import * as WebBrowser from 'expo-web-browser';
-import { RectButton, ScrollView } from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler';
+
+import SearchBarInput from '../components/SearchBar';
+import ListItemWithAvatar from '../components/AvatarForList';
+import { contactData } from '../constants/dummyData';
 
 export default function LinksScreen() {
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+    <View style={styles.container}>
+      <SearchBarInput/>
+
+      <ScrollView style={styles.container}>
+      {
+    contactData.map((l, i) => (
+      <React.Fragment>
+    <Text style={{backgroundColor: '#fff', marginLeft: 9, 
+    
+    color: 'rgba(20, 20, 20, 0.7)'}}>{l.group}</Text>
+    { l.data.map((ins, indx) => (
       
-    </ScrollView>
+        <ListItemWithAvatar 
+        {...ins} index={indx} key={indx} containerStyle={{ paddingTop: 14, paddingBottom: 14 }}/>
+      // <Text>{i}</Text>
+      )) }
+      </React.Fragment>
+    ))
+  }
+      </ScrollView>
+
+    </View>
   );
 }
 
@@ -16,7 +37,7 @@ export default function LinksScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fafafa',
+    backgroundColor: '#fafafa'
   },
   contentContainer: {
     paddingTop: 15,
