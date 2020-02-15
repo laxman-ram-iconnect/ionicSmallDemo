@@ -2,6 +2,7 @@ import * as React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import IonicIcons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import OctiIcon from 'react-native-vector-icons/Octicons';
 
 import Colors from '../constants/Colors';
 

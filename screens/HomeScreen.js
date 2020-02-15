@@ -1,15 +1,115 @@
 import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import * as WebBrowser from 'expo-web-browser';
 
-import { MonoText } from '../components/StyledText';
+import { SearchBar } from 'react-native-elements';
+import ListItemWithAvatar from '../components/AvatarForList';
+
+
+const list = [
+  {
+    name: 'Amy Farhan',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+    subtitle: 'Vice President',
+    color: 'green',
+    messageSent: true
+  },
+  {
+    name: 'Chris Jackson',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    subtitle: 'Vice Chairman',
+    color: 'orange',
+    messageSent: true
+  },
+  {
+    name: 'Amy Farhan',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+    subtitle: 'Vice President',
+    color: 'green',
+    messageSent: true
+  },
+  {
+    name: 'Chris Jackson',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    subtitle: 'Vice Chairman',
+    color: 'orange'
+  },
+  {
+    name: 'Amy Farhan',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+    subtitle: 'Vice President',
+    color: 'green'
+  },
+  {
+    name: 'Chris Jackson',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    subtitle: 'Vice Chairman',
+    color: 'orange'
+  },
+  {
+    name: 'Amy Farhan',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+    subtitle: 'Vice President',
+    color: 'green'
+  },
+  {
+    name: 'Chris Jackson',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    subtitle: 'Vice Chairman',
+    color: 'orange'
+  },
+  {
+    name: 'Amy Farhan',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+    subtitle: 'Vice President',
+    color: 'green'
+  },
+  {
+    name: 'Chris Jackson',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    subtitle: 'Vice Chairman',
+    color: 'orange'
+  },
+  {
+    name: 'Amy Farhan',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+    subtitle: 'Vice President',
+    color: 'green'
+  },
+  {
+    name: 'Chris Jackson',
+    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    subtitle: 'Vice Chairman',
+    color: 'orange'
+  }
+  // ... // more items
+
+];
+
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-       
+      <SearchBar
+        placeholder="Search"
+        lightTheme={ true }
+        onChangeText={null}
+        round={ true }
+        value={null}
+        containerStyle= {{ backgroundColor: 'white', marginBottom: -4, borderTopWidth: 0}}
+        inputContainerStyle
+={{backgroundColor: '#eeeeee', paddingTop: 1}}
+      />
+
+      <ScrollView style={styles.container}>
+      {
+    list.map((l, i) => (
+      <ListItemWithAvatar 
+      name={l.name} avatar_url={l.avatar_url} subtitle={l.subtitle}
+      color={l.color} messageSent={l.messageSent} index={i} key={i}/>
+    // <Text>{i}</Text>
+    ))
+  }
       </ScrollView>
 
     </View>
@@ -17,7 +117,9 @@ export default function HomeScreen() {
 }
 
 HomeScreen.navigationOptions = {
-  header: null,
+  header: {
+    style: { shadowColor: 'transparent' },
+  },
 };
 
 const styles = StyleSheet.create({
