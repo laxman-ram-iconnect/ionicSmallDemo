@@ -37,7 +37,7 @@ export default function LinksScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fafafa'
+    backgroundColor: '#fff'
   },
   contentContainer: {
     paddingTop: 15,

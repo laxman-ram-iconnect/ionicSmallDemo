@@ -38,3 +38,24 @@ export default ListItemWithAvatar = (props) =>{
         
    /> );
 }
+
+export const ProfileCard = (props) => {
+    return (
+        <ListItem
+        key={props.index}
+        leftAvatar={props.leftAvatar}
+        title={props.name}
+        titleStyle={props.titleStyle}
+        subtitle={props.subtitle}
+        subtitleStyle={props.subtitleStyle}
+        bottomDivider
+        rightTitle={<Text> {props.messageSent ?<Icon name="check-double"color="#3787db"/>: null} 
+        { props.showEditButton ? 'JAN 01' : null} </Text>}
+        rightSubtitle= {
+            props.messageCount ? <Badge status="primary" value={props.messageCount} /> : null
+        }
+        containerStyle={{ ... props.containerStyle}}
+        
+   />
+    )
+}

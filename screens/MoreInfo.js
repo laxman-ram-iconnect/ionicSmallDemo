@@ -1,26 +1,33 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import { Avatar } from 'react-native-elements';
 
-import SearchBarInput from '../components/SearchBar';
-import ListItemWithAvatar from '../components/AvatarForList';
-import { groupData } from '../constants/dummyData';
+import { ProfileCard } from '../components/AvatarForList';
 
-export default function GroupScreen() {
+const ProfilePicData = () => <Avatar
+rounded
+size="large"
+source={{
+  uri:
+    'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+}}
+/>;
+export default function MoreInfo() {
   return (
     <View style={styles.container}>
-      <SearchBarInput/>
+      <ProfileCard 
+      name="Joe Lane"
+      leftAvatar={<ProfilePicData />}
+      subtitle="Online"
+      titleStyle={{fontWeight: '700'}}
+      subtitleStyle={{color: '#3787db'}}
+      containerStyle={{ borderBottomWidth: 0}}
+      />
+     <Text style={{color: 'rgba(20, 20, 20, 0.7)', marginLeft: 14}}>PREFERENCES</Text>   
 
       <ScrollView style={styles.container}>
-      {
-    groupData.map((l, i) => (
-      
-        <ListItemWithAvatar 
-        {...l} index={i} key={i} />
-      // <Text>{i}</Text>
-      
-    ))
-  }
+     
       </ScrollView>
 
     </View>
