@@ -4,7 +4,6 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import GroupScreen from '../screens/GroupScreen';
-import MoreInfo from '../screens/MoreInfo';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -52,8 +51,8 @@ borderBottomColor: '#fff'
           }}
       />
       <BottomTab.Screen
-        name="MoreInfo"
-        component={MoreInfo}
+        name="more"
+        component={LinksScreen}
         options={{
           title: 'More',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="more-horiz" material="true" />,
@@ -73,7 +72,5 @@ function getHeaderTitle(route) {
       return 'Contacts';
     case 'Group':
       return 'Groups';
-    case 'MoreInfo':
-      return 'More Info';  
   }
 }

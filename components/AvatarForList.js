@@ -11,6 +11,7 @@ const AvatarForList = (props) => {
       uri:
       props.uri,
     }}
+    size="medium"
     editButton={{name: 'dot-single', 
     color: props.color, type: 'entypo', iconStyle: {backgroundColor: props.color, borderColor: 'white', 
 borderWidth: 1, borderRadius: 50} }}
@@ -26,10 +27,13 @@ export default ListItemWithAvatar = (props) =>{
    <ListItem
         key={props.index}
         leftAvatar={<AvatarForList uri={props.avatar_url} color={props.color} showEditButton={props.showEditButton}/>}
-        title={props.name}
-        subtitle={props.subtitle}
-        bottomDivider
-        rightTitle={<Text> {props.messageSent ?<Icon name="check-double"color="#3787db"/>: null} 
+        title={<View >
+        <Text style={{color:"#141414",fontSize: 17,fontWeight: "bold"}}>{props.name}</Text>
+      </View>}
+        subtitle={<View>
+        <Text style={styles.subtitleStyle}>{props.subtitle}</Text>
+      </View>}
+        rightTitle={<Text style={styles.subtitleStyle}> {props.messageSent ?<Icon name="check-double"color="#3787db"/>: null} 
         { props.showEditButton ? 'JAN 01' : null} </Text>}
         rightSubtitle= {
             props.messageCount ? <Badge status="primary" value={props.messageCount} /> : null
@@ -39,6 +43,9 @@ export default ListItemWithAvatar = (props) =>{
    /> );
 }
 
+const styles = StyleSheet.create({
+    subtitleStyle: {color:"rgba(20, 20, 20, 0.5);",fontSize: 13,fontWeight: "400"},
+})
 export const ProfileCard = (props) => {
     return (
         <ListItem
