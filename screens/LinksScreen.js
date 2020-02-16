@@ -19,9 +19,11 @@ export default function LinksScreen() {
     
     color: 'rgba(20, 20, 20, 0.7)'}}>{l.group}</Text>
     { l.data.map((ins, indx) => (
-      
-        <ListItemWithAvatar 
-        {...ins} index={indx + l.group} key={indx+ l.group} containerStyle={{ paddingTop: 14, paddingBottom: 14 }}/>
+      <View><ListItemWithAvatar 
+      {...ins} index={indx + l.group} key={indx+ l.group} containerStyle={{ paddingTop: 14, paddingBottom: 14 }}/>
+      <View style={{ borderBottomColor: "lightgrey",marginLeft:70,marginRight:10,marginTop:-5,borderBottomWidth: 1}}></View>
+    </View>
+        
       // <Text>{i}</Text>
       )) }
       </React.Fragment>

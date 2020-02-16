@@ -15,8 +15,10 @@ export default function GroupScreen() {
       {
     groupData.map((l, i) => (
       
-        <ListItemWithAvatar 
-        {...l} index={i} key={i} />
+       <View>
+          <ListItemWithAvatar {...l} index={i} key={i} />
+        <View style={{ borderBottomColor: 'lightgrey',marginLeft:70,marginRight:10,marginTop:-5,borderBottomWidth: 1}}></View>
+      </View>
       // <Text>{i}</Text>
       
     ))

@@ -14,8 +14,12 @@ export default function HomeScreen() {
       <ScrollView style={styles.container}>
       {
     chartData.map((l, i) => (
-      <ListItemWithAvatar 
-      {...l} index={i} key={i} showEditButton/>
+      <View><ListItemWithAvatar 
+      {...l} index={i} key={i} showEditButton />
+      <View style={{ borderBottomColor: 'lightgrey',marginLeft:70,marginRight:10,marginTop:-5,
+      borderBottomWidth: 1}}>
+      </View>
+      </View>
     // <Text>{i}</Text>
     ))
   }
