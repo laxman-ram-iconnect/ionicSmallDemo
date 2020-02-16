@@ -5,8 +5,9 @@ import { ScrollView } from 'react-native-gesture-handler';
 import SearchBarInput from '../components/SearchBar';
 import ListItemWithAvatar from '../components/AvatarForList';
 import { chartData } from '../constants/dummyData';
+import { HeaderTitle } from '@react-navigation/stack';
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
       <SearchBarInput/>
@@ -15,6 +16,7 @@ export default function HomeScreen() {
       {
     chartData.map((l, i) => (
       <ListItemWithAvatar 
+      onPress={() => navigation.push('Chats')}
       {...l} index={i} key={i} showEditButton/>
     // <Text>{i}</Text>
     ))

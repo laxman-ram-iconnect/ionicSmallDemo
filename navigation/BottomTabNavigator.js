@@ -49,7 +49,7 @@ borderBottomColor: '#fff'
         options={{
           title: 'Groups',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="group" material="true" />,
-        }}
+          }}
       />
       <BottomTab.Screen
         name="MoreInfo"

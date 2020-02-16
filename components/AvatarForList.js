@@ -35,7 +35,7 @@ export default ListItemWithAvatar = (props) =>{
             props.messageCount ? <Badge status="primary" value={props.messageCount} /> : null
         }
         containerStyle={{ ... props.containerStyle}}
-        
+        onPress={props.onPress}
    /> );
 }
 
