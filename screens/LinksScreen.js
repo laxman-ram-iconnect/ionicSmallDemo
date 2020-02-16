@@ -16,8 +16,8 @@ export default function LinksScreen() {
     contactData.map((l, i) => (
       <React.Fragment>
     <Text style={{backgroundColor: '#fff', marginLeft: 9, 
-    
-    color: 'rgba(20, 20, 20, 0.7)'}}>{l.group}</Text>
+    color: 'rgba(20, 20, 20, 0.7)'}}
+    key={i}>{l.group}</Text>
     { l.data.map((ins, indx) => (
       
         <ListItemWithAvatar 

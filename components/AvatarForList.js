@@ -43,6 +43,8 @@ export const ProfileCard = (props) => {
     return (
         <ListItem
         key={props.index}
+        leftIcon={props.leftIcon}
+        rightIcon={props.rightIcon}
         leftAvatar={props.leftAvatar}
         title={props.name}
         titleStyle={props.titleStyle}

@@ -13,6 +13,14 @@ source={{
     'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
 }}
 />;
+
+const IconAvatar = () => <Avatar
+rounded
+icon={{name: 'chat', type: 'material-community', color:'white'}}
+size={32}
+overlayContainerStyle={{backgroundColor: 'black'}}
+/>
+
 export default function MoreInfo() {
   return (
     <View style={styles.container}>
@@ -24,7 +32,42 @@ export default function MoreInfo() {
       subtitleStyle={{color: '#3787db'}}
       containerStyle={{ borderBottomWidth: 0}}
       />
-     <Text style={{color: 'rgba(20, 20, 20, 0.7)', marginLeft: 14}}>PREFERENCES</Text>   
+      
+     <Text style={{color: 'rgba(20, 20, 20, 0.7)', marginLeft: 14, marginTop: 8}}>PREFERENCES</Text>   
+
+     <ProfileCard 
+      name="Notifications"
+      leftIcon={{name: 'bell', type: 'font-awesome', color: 'black', size: 35}}
+      rightIcon={{name: 'angle-right', type: 'font-awesome', color: 'black'}}
+      titleStyle={{fontWeight: '700'}}
+      />
+     <ProfileCard 
+      name="Privacy & Security"
+      leftIcon={{name: 'md-hand', type: 'ionicon', color: 'black', size: 40}}
+      rightIcon={{name: 'angle-right', type: 'font-awesome', color: 'black'}}
+      titleStyle={{fontWeight: '700'}}
+      />   
+      <ProfileCard 
+      name="Chats"
+      leftAvatar={<IconAvatar />}
+      rightIcon={{name: 'angle-right', type: 'font-awesome', color: 'black'}}
+      titleStyle={{fontWeight: '700'}}
+      /> 
+
+      <Text style={{color: 'rgba(20, 20, 20, 0.7)', marginLeft: 14, marginTop: 8}}>OTHERS</Text> 
+
+      <ProfileCard 
+      name="Help"
+      leftIcon={{name: 'ios-help-circle', type: 'ionicon', color: 'black', size: 40}}
+      rightIcon={{name: 'angle-right', type: 'font-awesome', color: 'black'}}
+      titleStyle={{fontWeight: '700'}}
+      /> 
+      <ProfileCard 
+      name="Report a Problem"
+      leftIcon={{name: 'report-problem', type: 'material', color: 'black', size: 34}}
+      rightIcon={{name: 'angle-right', type: 'font-awesome', color: 'black'}}
+      titleStyle={{fontWeight: '700'}}
+      /> 
 
       <ScrollView style={styles.container}>
      
