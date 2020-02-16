@@ -11,7 +11,7 @@ export default function(containerRef) {
           Home: 'home',
           Links: 'links',
           Group: 'group',
-          Settings: 'settings',
+          MoreInfo: 'moreInfo',
         },
       },
     },

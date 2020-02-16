@@ -33,7 +33,7 @@ export default function GroupScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fafafa'
+    backgroundColor: '#fff'
   },
   contentContainer: {
     paddingTop: 15,

@@ -16,8 +16,8 @@ export default function LinksScreen() {
     contactData.map((l, i) => (
       <React.Fragment>
     <Text style={{backgroundColor: '#fff', marginLeft: 9, 
-    
-    color: 'rgba(20, 20, 20, 0.7)'}}>{l.group}</Text>
+    color: 'rgba(20, 20, 20, 0.7)'}}
+    key={i}>{l.group}</Text>
     { l.data.map((ins, indx) => (
       <View><ListItemWithAvatar 
       {...ins} index={indx + l.group} key={indx+ l.group} containerStyle={{ paddingTop: 14, paddingBottom: 14 }}/>
@@ -39,7 +39,7 @@ export default function LinksScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fafafa'
+    backgroundColor: '#fff'
   },
   contentContainer: {
     paddingTop: 15,

@@ -46,3 +46,25 @@ export default ListItemWithAvatar = (props) =>{
 const styles = StyleSheet.create({
     subtitleStyle: {color:"rgba(20, 20, 20, 0.5);",fontSize: 13,fontWeight: "400"},
 })
+export const ProfileCard = (props) => {
+    return (
+        <ListItem
+        key={props.index}
+        leftIcon={props.leftIcon}
+        rightIcon={props.rightIcon}
+        leftAvatar={props.leftAvatar}
+        title={props.name}
+        titleStyle={props.titleStyle}
+        subtitle={props.subtitle}
+        subtitleStyle={props.subtitleStyle}
+        bottomDivider
+        rightTitle={<Text> {props.messageSent ?<Icon name="check-double"color="#3787db"/>: null} 
+        { props.showEditButton ? 'JAN 01' : null} </Text>}
+        rightSubtitle= {
+            props.messageCount ? <Badge status="primary" value={props.messageCount} /> : null
+        }
+        containerStyle={{ ... props.containerStyle}}
+        
+   />
+    )
+}
