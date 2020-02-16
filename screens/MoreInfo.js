@@ -40,18 +40,25 @@ export default function MoreInfo() {
       leftIcon={{name: 'bell', type: 'font-awesome', color: 'black', size: 35}}
       rightIcon={{name: 'angle-right', type: 'font-awesome', color: 'black'}}
       titleStyle={{fontWeight: '700'}}
+      containerStyle={{ borderBottomWidth: 0}}
       />
+      <View style={{ borderBottomColor: 'lightgrey',marginLeft:70,marginRight:10,marginTop:-5,
+      borderBottomWidth: 1}}></View>
      <ProfileCard 
       name="Privacy & Security"
       leftIcon={{name: 'md-hand', type: 'ionicon', color: 'black', size: 40}}
       rightIcon={{name: 'angle-right', type: 'font-awesome', color: 'black'}}
       titleStyle={{fontWeight: '700'}}
+      containerStyle={{ borderBottomWidth: 0}}
       />   
+      <View style={{ borderBottomColor: 'lightgrey',marginLeft:70,marginRight:10,marginTop:-5,
+      borderBottomWidth: 1}}></View>
       <ProfileCard 
       name="Chats"
       leftAvatar={<IconAvatar />}
       rightIcon={{name: 'angle-right', type: 'font-awesome', color: 'black'}}
       titleStyle={{fontWeight: '700'}}
+      containerStyle={{ borderBottomWidth: 0}}
       /> 
 
       <Text style={{color: 'rgba(20, 20, 20, 0.7)', marginLeft: 14, marginTop: 8}}>OTHERS</Text> 
@@ -61,13 +68,19 @@ export default function MoreInfo() {
       leftIcon={{name: 'ios-help-circle', type: 'ionicon', color: 'black', size: 40}}
       rightIcon={{name: 'angle-right', type: 'font-awesome', color: 'black'}}
       titleStyle={{fontWeight: '700'}}
+      containerStyle={{ borderBottomWidth: 0}}
       /> 
+      <View style={{ borderBottomColor: 'lightgrey',marginLeft:70,marginRight:10,marginTop:-5,
+      borderBottomWidth: 1}}></View>
       <ProfileCard 
       name="Report a Problem"
       leftIcon={{name: 'report-problem', type: 'material', color: 'black', size: 34}}
       rightIcon={{name: 'angle-right', type: 'font-awesome', color: 'black'}}
       titleStyle={{fontWeight: '700'}}
+      containerStyle={{ borderBottomWidth: 0}}
       /> 
+      <View style={{ borderBottomColor: 'lightgrey',marginLeft:70,marginRight:10,marginTop:-5,
+      borderBottomWidth: 1}}></View>
 
       <ScrollView style={styles.container}>
      
