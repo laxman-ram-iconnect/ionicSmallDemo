@@ -4,27 +4,21 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 import SearchBarInput from '../components/SearchBar';
 import ListItemWithAvatar from '../components/AvatarForList';
-import { contactData } from '../constants/dummyData';
+import { groupData } from '../constants/dummyData';
 
-export default function LinksScreen() {
+export default function GroupScreen() {
   return (
     <View style={styles.container}>
       <SearchBarInput/>
 
       <ScrollView style={styles.container}>
       {
-    contactData.map((l, i) => (
-      <React.Fragment>
-    <Text style={{backgroundColor: '#fff', marginLeft: 9, 
-    
-    color: 'rgba(20, 20, 20, 0.7)'}}>{l.group}</Text>
-    { l.data.map((ins, indx) => (
+    groupData.map((l, i) => (
       
         <ListItemWithAvatar 
-        {...ins} index={indx + l.group} key={indx+ l.group} containerStyle={{ paddingTop: 14, paddingBottom: 14 }}/>
+        {...l} index={i} key={i} />
       // <Text>{i}</Text>
-      )) }
-      </React.Fragment>
+      
     ))
   }
       </ScrollView>

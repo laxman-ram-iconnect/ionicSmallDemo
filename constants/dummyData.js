@@ -45,11 +45,11 @@ export const contactData = [{
     group : 'A',
     data : [
         {
-            name: 'Sanji Winsmoke',
+            name: 'Aanji Winsmoke',
             avatar_url: 'https://randomuser.me/api/portraits/men/40.jpg'            
           },
           {
-            name: 'Zoro Hunter',
+            name: 'Aoro Hunter',
             avatar_url: 'https://randomuser.me/api/portraits/men/79.jpg'            
           }    
     ]},
@@ -57,11 +57,11 @@ export const contactData = [{
         group : 'B',
         data : [
             {
-                name: 'Nami Hat',
+                name: 'Bami Hat',
                 avatar_url: 'https://randomuser.me/api/portraits/women/45.jpg'            
               } ,
               {
-                name: 'Nico Robin',
+                name: 'Bico Robin',
                 avatar_url: 'https://randomuser.me/api/portraits/women/49.jpg'            
               } 
         ]},
@@ -69,11 +69,11 @@ export const contactData = [{
             group : 'C',
             data : [
                 {
-                    name: 'Patrick Manlos',
+                    name: 'Catrick Manlos',
                     avatar_url: 'https://randomuser.me/api/portraits/men/41.jpg'            
                   } ,
                   {
-                    name: 'Nikos Robitson',
+                    name: 'Cikos Robitson',
                     avatar_url: 'https://randomuser.me/api/portraits/men/42.jpg'            
                   } 
             ]},
@@ -81,13 +81,43 @@ export const contactData = [{
                 group : 'D',
                 data : [
                     {
-                        name: 'Laura Trump',
+                        name: 'Daura Trump',
                         avatar_url: 'https://randomuser.me/api/portraits/women/41.jpg'            
                       } ,
                       {
-                        name: 'Kanchan',
+                        name: 'Danchan',
                         avatar_url: 'https://randomuser.me/api/portraits/women/42.jpg'            
                       } 
                 ]}
                 
 ]
+
+export const groupData = [
+    {
+      name: 'Valley View Group',
+      avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+      subtitle: 'Public'
+    },
+    {
+      name: 'Tech Support',
+      avatar_url: 'https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png',
+      subtitle: 'Public'
+    },
+    {
+      name: 'Family',
+      avatar_url: 'https://img.favpng.com/7/12/17/family-euclidean-vector-png-favpng-k5SMvbkpAKXEkqUdSg07eyQRV.jpg',
+      subtitle: 'Public'
+    },
+    {
+      name: 'Developer Circle',
+      avatar_url: 'https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/challenge_thumbnails/000/898/077/datas/original.png',
+      subtitle: 'Public'
+    },
+    {
+      name: 'Backers Valley',
+      avatar_url: 'https://lh3.googleusercontent.com/proxy/qDJhy7hzsEUSwLTvNN_gnjDgj25L3fXEKBeOriHgi9B50Nvsz2afGEFZV7Hr5RFkM5vkxoC93F_1nRZ_VHdYGV1Ft-eJ6xPVPD0OX-G3qdKEq6RhUKVjake8A4jLHHm_EEleT8gFUg',
+      subtitle: 'Public'
+    }
+    // ... // more items
+  
+  ];

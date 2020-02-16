@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
+import GroupScreen from '../screens/GroupScreen';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
@@ -42,8 +43,8 @@ borderBottomColor: '#fff'
         }}
       />
       <BottomTab.Screen
-        name="groups"
-        component={LinksScreen}
+        name="Group"
+        component={GroupScreen}
         options={{
           title: 'Groups',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="group" material="true" />,
@@ -69,5 +70,7 @@ function getHeaderTitle(route) {
       return 'Chats';
     case 'Links':
       return 'Contacts';
+    case 'Group':
+      return 'Groups';
   }
 }
