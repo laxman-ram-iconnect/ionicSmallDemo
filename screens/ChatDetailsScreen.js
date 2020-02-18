@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, ScrollView, KeyboardAvoidingView, TextInput, TouchableHighlight, Keyboard } from 'react-native';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
 import AutogrowInput from 'react-native-autogrow-input';
-
+import { Avatar } from "react-native-elements";
+import AntDesign from "react-native-vector-icons/AntDesign";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 //used to make random-sized messages
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -42,6 +45,8 @@ export default class ChatView extends Component {
 
   static navigationOptions = {
     title: 'Chat',
+    headerStyle: { backgroundColor: 'red' },
+  headerTitleStyle: { color: 'green' },
   };
 
   //fun keyboard stuff- we use these to get the end of the ScrollView to "follow" the top of the InputBar as the keyboard rises and falls
@@ -136,15 +141,23 @@ class MessageBubble extends Component {
   render() {
 
     //These spacers make the message bubble stay to the left or the right, depending on who is speaking, even if the message is multiple lines.
-    var leftSpacer = this.props.direction === 'left' ? null : <View style={{width: 70}}/>;
-    var rightSpacer = this.props.direction === 'left' ? <View style={{width: 70}}/> : null;
+    var leftSpacer = this.props.direction === 'left' ? null : <View style={{width: 120}}/>;
+    var rightSpacer = this.props.direction === 'left' ? <View style={{width: 80}}/> : null;
 
     var bubbleStyles = this.props.direction === 'left' ? [styles.messageBubble, styles.messageBubbleLeft] : [styles.messageBubble, styles.messageBubbleRight];
 
     var bubbleTextStyle = this.props.direction === 'left' ? styles.messageBubbleTextLeft : styles.messageBubbleTextRight;
 
     return (
-        <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
+        <View style={{paddingLeft:10,justifyContent: 'space-between',marginBottom:10, flexDirection: 'row'}}>
+       {this.props.direction === 'left' && <Avatar
+  rounded
+  containerStyle={{ marginTop: "auto",width:25,height:25}}
+  source={{
+    uri:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+  }}
+/>}
             {leftSpacer}
             <View style={bubbleStyles}>
               <Text style={bubbleTextStyle}>
@@ -174,16 +187,22 @@ class InputBar extends Component {
   render() {
     return (
           <View style={styles.inputBar}>
+          <AntDesign name="pluscircle"color="lightgrey" size={30}/>
             <AutogrowInput style={styles.textBox}
                         ref={(ref) => { this.autogrowInput = ref }} 
                         multiline={true}
-                        defaultHeight={30}
+                        defaultHeight={40}
                         onChangeText={(text) => this.props.onChangeText(text)}
                         onContentSizeChange={this.props.onSizeChange}
-                        value={this.props.text}/>
-            <TouchableHighlight style={styles.sendButton} onPress={() => this.props.onSendPressed()}>
+                        value={this.props.text}>
+                         {/* <View > */}
+                           <FontAwesome5 name="smile" color="grey" size={20}/>
+                           {/* </View> */}
+                         </AutogrowInput>
+                        <MaterialCommunityIcons name="arrow-up-circle"color=" rgba(51, 153, 255, 0.92);" size={35} iconStyle={{marginTop: 50}}/>
+            {/* <TouchableHighlight style={styles.sendButton} onPress={() => this.props.onSendPressed()}>
                 <Text style={{color: 'white'}}>Send</Text>
-            </TouchableHighlight>
+            </TouchableHighlight> */}
           </View> 
           );
   }
@@ -212,15 +231,19 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 5,
     paddingVertical: 3,
+    marginBottom:15
   },
 
   textBox: {
-    borderRadius: 5,
+    borderRadius: 20,
     borderWidth: 1,
-    borderColor: 'gray',
+    borderColor: 'lightgrey',
     flex: 1,
     fontSize: 16,
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
+    backgroundColor: 'lightgrey',
+    marginLeft:10,
+    marginRight:10
   },
 
   sendButton: {
@@ -236,18 +259,20 @@ const styles = StyleSheet.create({
   //MessageBubble
 
   messageBubble: {
-      borderRadius: 5,
+      borderRadius: 20,
       marginTop: 8,
       marginRight: 10,
       marginLeft: 10,
       paddingHorizontal: 10,
       paddingVertical: 5,
       flexDirection:'row',
-      flex: 1
+      flex: 1,
+      paddingTop:5,
+      paddingBottom:8
   },
 
   messageBubbleLeft: {
-    backgroundColor: '#d5d8d4',
+    backgroundColor: ' rgba(248, 248, 248, 0.92);',
   },
 
   messageBubbleTextLeft: {
@@ -255,7 +280,7 @@ const styles = StyleSheet.create({
   },
 
   messageBubbleRight: {
-    backgroundColor: '#3787db'
+    backgroundColor: ' rgba(51, 153, 255, 0.92);'
   },
 
   messageBubbleTextRight: {
