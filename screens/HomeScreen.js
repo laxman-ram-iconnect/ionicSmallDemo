@@ -3,11 +3,12 @@ import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react
 import { ScrollView } from 'react-native-gesture-handler';
 
 import SearchBarInput from '../components/SearchBar';
-import ListItemWithAvatar from '../components/AvatarForList';
+import ListItemWithAvatar, { ListItemAvatar } from '../components/AvatarForList';
 import { chartData } from '../constants/dummyData';
 import { HeaderTitle } from '@react-navigation/stack';
 
 export default function HomeScreen({navigation}) {
+  
   return (
     <View style={styles.container}>
       <SearchBarInput/>
@@ -17,6 +18,10 @@ export default function HomeScreen({navigation}) {
     chartData.map((l, i) => (
       <View><ListItemWithAvatar 
       onPress={() => navigation.push('Chats')}
+      leftAvatar={ <ListItemAvatar uri={l.avatar_url}
+                    smallIconStyle={{backgroundColor: l.color, borderColor: 'white', 
+                    borderWidth: 1, borderRadius: 50}}
+                   color={l.color} showEditButton={true}/> }
       {...l} index={i} key={i} showEditButton />
       <View style={{ borderBottomColor: 'lightgrey',marginLeft:70,marginRight:10,marginTop:-5,
       borderBottomWidth: 1}}>

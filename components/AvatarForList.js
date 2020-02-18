@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import { ListItem, Badge } from 'react-native-elements'
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const AvatarForList = (props) => {
+export const ListItemAvatar = (props) => {
     return <Avatar
     rounded
     source={{
@@ -13,8 +13,7 @@ const AvatarForList = (props) => {
     }}
     size="medium"
     editButton={{name: 'dot-single', 
-    color: props.color, type: 'entypo', iconStyle: {backgroundColor: props.color, borderColor: 'white', 
-borderWidth: 1, borderRadius: 50} }}
+    color: props.color, type: 'entypo', iconStyle: props.smallIconStyle }}
     showEditButton = {props.showEditButton}
   />
   }
@@ -26,15 +25,15 @@ export default ListItemWithAvatar = (props) =>{
    
    <ListItem
         key={props.index}
-        leftAvatar={<AvatarForList uri={props.avatar_url} color={props.color} showEditButton={props.showEditButton}/>}
+        leftAvatar={props.leftAvatar}
         title={<View >
-        <Text style={{color:"#141414",fontSize: 17,fontWeight: "bold"}}>{props.name}</Text>
+        <Text style={listStyles.titleStyle}>{props.name}</Text>
       </View>}
         subtitle={<View>
-        <Text style={styles.subtitleStyle}>{props.subtitle}</Text>
+        <Text style={listStyles.subtitleStyle}>{props.subtitle}</Text>
       </View>}
-        rightTitle={<Text style={styles.subtitleStyle}> {props.messageSent ?<Icon name="check-double"color="#3787db"/>: null} 
-        { props.showEditButton ? 'JAN 01' : null} </Text>}
+        rightTitle={<Text style={listStyles.subtitleStyle}> {props.messageSent ?<Icon name="check-double" color="#3787db"/>: null} 
+        { props.showEditButton ? props.sentDate : null} </Text>}
         rightSubtitle= {
             props.messageCount ? <Badge status="primary" value={props.messageCount} /> : null
         }
@@ -43,9 +42,11 @@ export default ListItemWithAvatar = (props) =>{
    /> );
 }
 
-const styles = StyleSheet.create({
+export const listStyles = StyleSheet.create({
+    titleStyle: {color:"#141414",fontSize: 17,fontWeight: "bold"},
     subtitleStyle: {color:"rgba(20, 20, 20, 0.5);",fontSize: 13,fontWeight: "400"},
 })
+
 export const ProfileCard = (props) => {
     return (
         <ListItem
