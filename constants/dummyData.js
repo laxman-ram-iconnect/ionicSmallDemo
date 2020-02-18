@@ -5,7 +5,8 @@ export const chartData = [
     subtitle: 'Vice President',
     color: 'green',
     messageSent: true,
-    messageCount: 6
+    messageCount: 6,
+    sentDate: 'JAN 01'
   },
   {
     name: 'Chris Jackson',
@@ -13,7 +14,8 @@ export const chartData = [
     subtitle: 'Vice Chairman',
     color: 'orange',
     messageSent: true,
-    messageCount: 7
+    messageCount: 7,
+    sentDate: 'JAN 01'
   },
   {
     name: 'Amy Farhan',
@@ -21,21 +23,24 @@ export const chartData = [
     subtitle: 'Vice President',
     color: 'green',
     messageSent: true,
-    messageCount: 3
+    messageCount: 3,
+    sentDate: 'JAN 01'
   },
   {
     name: 'Chris Jackson',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman',
     color: 'orange',
-    messageCount: 9
+    messageCount: 9,
+    sentDate: 'JAN 01'
   },
   {
     name: 'Amy Farhan',
     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
     subtitle: 'Vice President',
     color: 'green',
-    messageCount: 0
+    messageCount: 0,
+    sentDate: 'JAN 01'
   }
   // ... // more items
 

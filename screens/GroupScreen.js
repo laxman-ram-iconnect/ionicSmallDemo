@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import SearchBarInput from '../components/SearchBar';
-import ListItemWithAvatar from '../components/AvatarForList';
+import ListItemWithAvatar, {ListItemAvatar} from '../components/AvatarForList';
 import { groupData } from '../constants/dummyData';
 
 export default function GroupScreen() {
@@ -16,7 +16,9 @@ export default function GroupScreen() {
     groupData.map((l, i) => (
       
        <View>
-          <ListItemWithAvatar {...l} index={i} key={i} />
+          <ListItemWithAvatar
+          leftAvatar={ <ListItemAvatar uri={l.avatar_url} /> } 
+          {...l} index={i} key={i} />
         <View style={{ borderBottomColor: 'lightgrey',marginLeft:70,marginRight:10,marginTop:-5,borderBottomWidth: 1}}></View>
       </View>
       // <Text>{i}</Text>

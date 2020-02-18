@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import SearchBarInput from '../components/SearchBar';
-import ListItemWithAvatar from '../components/AvatarForList';
+import ListItemWithAvatar, { ListItemAvatar } from '../components/AvatarForList';
 import { contactData } from '../constants/dummyData';
 
 export default function LinksScreen() {
@@ -19,7 +19,8 @@ export default function LinksScreen() {
     color: 'rgba(20, 20, 20, 0.7)'}}
     key={i}>{l.group}</Text>
     { l.data.map((ins, indx) => (
-      <View><ListItemWithAvatar 
+      <View><ListItemWithAvatar
+      leftAvatar={ <ListItemAvatar uri={ins.avatar_url} /> } 
       {...ins} index={indx + l.group} key={indx+ l.group} containerStyle={{ paddingTop: 14, paddingBottom: 14 }}/>
       <View style={{ borderBottomColor: "lightgrey",marginLeft:70,marginRight:10,marginTop:-5,borderBottomWidth: 1}}></View>
     </View>

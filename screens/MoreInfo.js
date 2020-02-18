@@ -28,8 +28,8 @@ export default function MoreInfo() {
       name="Joe Lane"
       leftAvatar={<ProfilePicData />}
       subtitle="Online"
-      titleStyle={{fontWeight: '700'}}
-      subtitleStyle={{color: '#3787db'}}
+      titleStyle={{fontWeight: '700', fontSize: 17, color: '#141414'}}
+      subtitleStyle={{color: '#3399ff', fontSize: 15, fontFamily: 'Roboto'}}
       containerStyle={{ borderBottomWidth: 0}}
       />
       
@@ -37,8 +37,8 @@ export default function MoreInfo() {
 
      <ProfileCard 
       name="Notifications"
-      leftIcon={{name: 'bell', type: 'font-awesome', color: 'black', size: 35}}
-      rightIcon={{name: 'angle-right', type: 'font-awesome', color: 'black'}}
+      leftIcon={{name: 'bell', type: 'font-awesome', color: '#141414', size: 35}}
+      rightIcon={{name: 'angle-right', type: 'font-awesome', color: '#141414'}}
       titleStyle={{fontWeight: '700'}}
       containerStyle={{ borderBottomWidth: 0}}
       />
@@ -46,8 +46,8 @@ export default function MoreInfo() {
       borderBottomWidth: 1}}></View>
      <ProfileCard 
       name="Privacy & Security"
-      leftIcon={{name: 'md-hand', type: 'ionicon', color: 'black', size: 40}}
-      rightIcon={{name: 'angle-right', type: 'font-awesome', color: 'black'}}
+      leftIcon={{name: 'md-hand', type: 'ionicon', color: '#141414', size: 40}}
+      rightIcon={{name: 'angle-right', type: 'font-awesome', color: '#141414'}}
       titleStyle={{fontWeight: '700'}}
       containerStyle={{ borderBottomWidth: 0}}
       />   
@@ -56,7 +56,7 @@ export default function MoreInfo() {
       <ProfileCard 
       name="Chats"
       leftAvatar={<IconAvatar />}
-      rightIcon={{name: 'angle-right', type: 'font-awesome', color: 'black'}}
+      rightIcon={{name: 'angle-right', type: 'font-awesome', color: '#141414'}}
       titleStyle={{fontWeight: '700'}}
       containerStyle={{ borderBottomWidth: 0}}
       /> 
@@ -65,8 +65,8 @@ export default function MoreInfo() {
 
       <ProfileCard 
       name="Help"
-      leftIcon={{name: 'ios-help-circle', type: 'ionicon', color: 'black', size: 40}}
-      rightIcon={{name: 'angle-right', type: 'font-awesome', color: 'black'}}
+      leftIcon={{name: 'ios-help-circle', type: 'ionicon', color: '#141414', size: 40}}
+      rightIcon={{name: 'angle-right', type: 'font-awesome', color: '#141414'}}
       titleStyle={{fontWeight: '700'}}
       containerStyle={{ borderBottomWidth: 0}}
       /> 
@@ -74,8 +74,8 @@ export default function MoreInfo() {
       borderBottomWidth: 1}}></View>
       <ProfileCard 
       name="Report a Problem"
-      leftIcon={{name: 'report-problem', type: 'material', color: 'black', size: 34}}
-      rightIcon={{name: 'angle-right', type: 'font-awesome', color: 'black'}}
+      leftIcon={{name: 'report-problem', type: 'material', color: '#141414', size: 34}}
+      rightIcon={{name: 'angle-right', type: 'font-awesome', color: '#141414'}}
       titleStyle={{fontWeight: '700'}}
       containerStyle={{ borderBottomWidth: 0}}
       /> 
