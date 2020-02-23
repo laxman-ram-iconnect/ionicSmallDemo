@@ -32,7 +32,7 @@ borderBottomColor: '#fff'
         component={HomeScreen}
         options={{
           title: 'Chats',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="chat" materialCom="true"/>,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="chat" material="true"/>,
         }}
       />
       <BottomTab.Screen
@@ -40,7 +40,7 @@ borderBottomColor: '#fff'
         component={LinksScreen}
         options={{
           title: 'Contacts',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-contact" ionicIcon="true"/>,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-person" ionicIcon="true"/>,
         }}
       />
       <BottomTab.Screen
@@ -56,7 +56,7 @@ borderBottomColor: '#fff'
         component={MoreInfo}
         options={{
           title: 'More',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="more-horiz" material="true" />,
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="dots-horizontal-circle" materialCom="true" />,
         }}
       />
     </BottomTab.Navigator>
