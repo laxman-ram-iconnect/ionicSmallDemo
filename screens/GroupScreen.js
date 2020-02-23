@@ -17,7 +17,8 @@ export default function GroupScreen() {
       
        <View>
           <ListItemWithAvatar
-          leftAvatar={ <ListItemAvatar uri={l.avatar_url} /> } 
+          leftAvatar={ <ListItemAvatar showRounded={true}
+                          size={'medium'} uri={l.avatar_url} /> } 
           {...l} index={i} key={i} />
         <View style={{ borderBottomColor: 'lightgrey',marginLeft:70,marginRight:10,marginTop:-5,borderBottomWidth: 1}}></View>
       </View>

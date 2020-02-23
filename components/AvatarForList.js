@@ -6,16 +6,13 @@ import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react
 
 export const ListItemAvatar = (props) => {
     return <Avatar
-    rounded
-    source={{
-      uri:
-      props.uri,
-    }}
-    size="medium"
-    editButton={{name: 'dot-single', 
-    color: props.color, type: 'entypo', iconStyle: props.smallIconStyle }}
+    rounded={props.showRounded}
+    source={ props.uri ? { uri: props.uri } : null }
+    size={props.size}
+    editButton={props.smallIconOnAvatar}
     showEditButton = {props.showEditButton}
-  />
+    title = { !props.uri ? props.title :  null }
+    />
   }
 
 export default ListItemWithAvatar = (props) =>{

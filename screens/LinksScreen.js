@@ -20,7 +20,10 @@ export default function LinksScreen() {
     key={i}>{l.group}</Text>
     { l.data.map((ins, indx) => (
       <View><ListItemWithAvatar
-      leftAvatar={ <ListItemAvatar uri={ins.avatar_url} /> } 
+      leftAvatar={ <ListItemAvatar 
+                    showRounded={true}
+                    size={'medium'}
+                    uri={ins.avatar_url} /> } 
       {...ins} index={indx + l.group} key={indx+ l.group} containerStyle={{ paddingTop: 14, paddingBottom: 14 }}/>
       <View style={{ borderBottomColor: "lightgrey",marginLeft:70,marginRight:10,marginTop:-5,borderBottomWidth: 1}}></View>
     </View>

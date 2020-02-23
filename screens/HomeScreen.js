@@ -9,6 +9,12 @@ import { HeaderTitle } from '@react-navigation/stack';
 
 export default function HomeScreen({navigation}) {
   
+  // pass props for smallIcon on avatar
+  const smallIconOnAvatar = (props) => {
+    return { name: 'dot-single', 
+    color: props.color, type: 'entypo',
+    iconStyle: props.iconStyle }
+  }
   return (
     <View style={styles.container}>
       <SearchBarInput/>
@@ -16,14 +22,24 @@ export default function HomeScreen({navigation}) {
       <ScrollView style={styles.container}>
       {
     chartData.map((l, i) => (
-      <View><ListItemWithAvatar 
-      onPress={() => navigation.push('Chats')}
-      leftAvatar={ <ListItemAvatar uri={l.avatar_url}
-                    smallIconStyle={{backgroundColor: l.color, borderColor: 'white', 
-                    borderWidth: 1, borderRadius: 50}}
-                   color={l.color} showEditButton={true}/> }
-      {...l} index={i} key={i} showEditButton />
-      <View style={{ borderBottomColor: 'lightgrey',marginLeft:70,marginRight:10,marginTop:-5,
+      <View key={i+1}>
+        <ListItemWithAvatar 
+          onPress={() => navigation.push('Chats')}
+          leftAvatar={ <ListItemAvatar uri={l.avatar_url}
+                        showRounded={true}
+                        size={'medium'}
+                        smallIconOnAvatar={smallIconOnAvatar({backgroundColor:l.color, color: l.color ? l.color : 'grey',
+                              iconStyle: {backgroundColor: l.color, borderColor: 'white', 
+                              borderWidth: 1, borderRadius: 50}})}
+                        color={l.color}
+                        showEditButton={true} // if ture will show smallIcon
+                        title={l.name.substring(0, 2).toUpperCase()}
+                        /> }
+            {...l}
+            index={i} 
+            key={i+3} 
+            showEditButton />
+      <View key={i+2} style={{ borderBottomColor: 'lightgrey',marginLeft:70,marginRight:10,marginTop:-5,
       borderBottomWidth: 1}}>
       </View>
       </View>
