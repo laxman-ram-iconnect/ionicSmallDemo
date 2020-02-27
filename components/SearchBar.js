@@ -10,7 +10,8 @@ export default SearchBarInput = (props) => {
         onChangeText={null}
         round={ true }
         value={null}
-        containerStyle= {{ backgroundColor: 'white', marginBottom: -4, borderTopWidth: 0}}
+        containerStyle= {{ backgroundColor: 'white', marginBottom: -4, borderTopWidth: 0,
+                           marginLeft: 2, marginRight: 2}}
         inputContainerStyle={{backgroundColor: '#eeeeee', paddingTop: 1}}
       />
     )

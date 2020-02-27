@@ -15,12 +15,13 @@ export default function GroupScreen() {
       {
     groupData.map((l, i) => (
       
-       <View>
+       <View key={i+ 1}>
           <ListItemWithAvatar
           leftAvatar={ <ListItemAvatar showRounded={true}
-                          size={'medium'} uri={l.avatar_url} /> } 
-          {...l} index={i} key={i} />
-        <View style={{ borderBottomColor: 'lightgrey',marginLeft:70,marginRight:10,marginTop:-5,borderBottomWidth: 1}}></View>
+                        size={'medium'} uri={l.avatar_url}
+                         /> } 
+          {...l} index={i} key={i+ 3} />
+        <View key={i+2 } style={{ borderBottomColor: '#ececec',marginLeft:70,marginRight:10,marginTop:-5,borderBottomWidth: 1}}></View>
       </View>
       // <Text>{i}</Text>
       
