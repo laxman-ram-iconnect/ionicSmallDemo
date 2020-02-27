@@ -31,7 +31,7 @@ export const CircleAvatar = (props) => {
     <View style={avatarTitleStyle}><Text>{props.title}</Text></View>
 }
 
-export const CustomBadge = (props) => {
+export const CustomizedBadge = (props) => {
   const badgetStyle = {
     borderRadius: 50,
     borderColor: props.borderColor,
@@ -108,12 +108,12 @@ export const ProfileCard = (props) => {
   )
 }
 
-// export const CustomBadge = (props) => {
-//   return <Badge value={props.count} badgeStyle={{
-//     backgroundColor: props.backgroundColor,
-//     borderWidth: props.borderWidth, borderColor: props.borderColor
-//   }} />
-// }
+export const CustomBadge = (props) => {
+  return <Badge value={props.count} badgeStyle={{
+    backgroundColor: props.backgroundColor,
+    borderWidth: props.borderWidth, borderColor: props.borderColor
+  }} />
+}
 
 
 // import React, { Component } from "react";

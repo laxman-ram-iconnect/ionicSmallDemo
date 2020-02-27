@@ -3,7 +3,7 @@ import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react
 import { ScrollView } from 'react-native-gesture-handler';
 
 import SearchBarInput from '../components/SearchBar';
-import { CircleAvatar, CustomBadge } from '../components/AvatarForList';
+import { CircleAvatar, CustomizedBadge } from '../components/AvatarForList';
 import { chartData } from '../constants/dummyData';
 import { HeaderTitle } from '@react-navigation/stack';
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -69,7 +69,7 @@ export default function HomeScreen({ navigation }) {
               <View style={styles.loremIpsum3Column}>
                 <Text style={styles.loremIpsum3}>09.40pm</Text>
                 <View style={{marginRight: 5}}>
-                  <CustomBadge count={5} backgroundColor={'#3399ff'} textColor={'white'} />
+                  <CustomizedBadge count={5} backgroundColor={'#3399ff'} textColor={'white'} />
                 </View>
               </View>
             </View>
