@@ -10,6 +10,7 @@ import BottomTabNavigator from './navigation/BottomTabNavigator';
 
 import ChatDetails from './screens/ChatDetailsScreen';
 import useLinking from './navigation/useLinking';
+import { Header } from 'react-native/Libraries/NewAppScreen';
 
 const Stack = createStackNavigator();
 
@@ -54,7 +55,7 @@ export default function App(props) {
         <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
           <Stack.Navigator>
             <Stack.Screen name="Root" component={BottomTabNavigator} />
-            <Stack.Screen name="Chats" component={ChatDetails} />
+            <Stack.Screen name="Chats" component={ChatDetails} options={{headerTitleAlign: 'center'}}/>
           </Stack.Navigator>
         </NavigationContainer>
       </View>

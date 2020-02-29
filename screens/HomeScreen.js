@@ -13,7 +13,7 @@ export default function HomeScreen({ navigation }) {
 
 
   const openMessages = () => {
-    navigation.push('Chats')
+    navigation.navigate('Chats')
   };
 
   const rightIcon = <Icon name="check-all" style={{
