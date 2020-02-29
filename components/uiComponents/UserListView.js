@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableNativeFeedback, View } from 'react-native';
 import ImageAvatar from './ImageAvatar';
 import TitleAvatar from './TitleAvatar';
 import CustomBadge from './CustomBadge';
@@ -8,7 +8,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default UserListView = (props) => {
     return (
-        <TouchableOpacity onPress={props.onClickFunction}>
+        <TouchableNativeFeedback onPress={props.onClickFunction}>
 
             <View style={styles.imageRow}>
                 <View style={{ flexDirection: 'row' }}>
@@ -61,7 +61,7 @@ export default UserListView = (props) => {
                     </View>
                 </View>
             </View>
-        </TouchableOpacity>
+        </TouchableNativeFeedback>
     );
 }
 
