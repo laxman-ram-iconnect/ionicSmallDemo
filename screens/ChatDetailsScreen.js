@@ -90,7 +90,7 @@ export default class ChatView extends Component {
   }
 
   _onChangeInputBarText(text) {
-    console.log("change text");
+    console.log("change text", text);
     this.setState({
       inputBarText: text
     });
