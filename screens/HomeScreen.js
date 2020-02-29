@@ -43,9 +43,10 @@ export default function HomeScreen({ navigation }) {
                 avatarTitle={chat.name.substring(0, 2).toUpperCase()}
                 mainLabel={chat.name}
                 subLabel={chat.scope}
-                rightIcon={chat.lastActiveAt ? rightIcon : null}
+                isMsgRead={chat.lastActiveAt ? true : false}
                 rightLabel={moment(chat.joinedAt).format('HH:MM A')}
-                rightContentBadge={cBadge}
+                msgCount={2}
+                status={chat.status}
               />
               <View key={i + 2} style={{
                 borderBottomColor: '#ececec', marginLeft: 70, marginRight: 10, marginTop: -5,

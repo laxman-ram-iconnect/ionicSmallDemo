@@ -3,6 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import ImageAvatar from './ImageAvatar';
 import TitleAvatar from './TitleAvatar';
 import CustomBadge from './CustomBadge';
+import StatusIndicator from './StatusIndicator';
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default UserListView = (props) => {
@@ -24,6 +25,15 @@ export default UserListView = (props) => {
                                 backgroundColor={'lightgrey'}
                                 title={props.avatarTitle} />
                     }
+                    <View style={{marginTop: 32, marginLeft: -15}}>
+                        <StatusIndicator height={18}
+                            width={18}
+                            borderRadius={50}
+                            backgroundColor={ props.status === 'online' ? 'green' : 'orange'}
+                            borderWidth={3}
+                            borderColor={'white'}
+                        />
+                    </View>
 
                     <View style={styles.annaFailStackColumn}>
                         <View style={styles.annaFailStack}>
@@ -34,20 +44,19 @@ export default UserListView = (props) => {
                 </View>
                 <View style={styles.rightListContent}>
                     {
-                        props.rightIcon
+                        props.isMsgRead ?
+                            <Icon name="check-all" style={styles.icon}></Icon>
+                            : null
                     }
-                    {/* <Icon name="check-all" style={styles.icon}></Icon> */}
+
                     <View style={styles.loremIpsum3Column}>
                         <Text style={styles.loremIpsum3}>{props.rightLabel}</Text>
-                        <View style={{ marginRight: 5 }}>
-                            {
-                                props.rightContentBadge
-                            }
-                            {/* <CustomBadge
+                        <View style={{ marginRight: 3, marginTop: 2 }}>
+                            <CustomBadge
                                 height={20}
                                 width={20}
                                 borderRadius={50}
-                                count={5} backgroundColor={'#3399ff'} textColor={'white'} /> */}
+                                count={props.msgCount} backgroundColor={'#3399ff'} textColor={'white'} />
                         </View>
                     </View>
                 </View>
