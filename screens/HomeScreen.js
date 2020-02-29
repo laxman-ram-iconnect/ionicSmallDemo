@@ -1,81 +1,60 @@
 import * as React from 'react';
-import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import moment from 'moment'
 
 import SearchBarInput from '../components/SearchBar';
-import { CircleAvatar, CustomizedBadge } from '../components/AvatarForList';
-import { chartData } from '../constants/dummyData';
-import { HeaderTitle } from '@react-navigation/stack';
+import CustomBadge from '../components/uiComponents/CustomBadge'
+import { chatData } from '../constants/dummyData';
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import UserListView from '../components/uiComponents/UserListView';
 
 export default function HomeScreen({ navigation }) {
 
-  // pass props for smallIcon on avatar
-  const smallIconOnAvatar = (props) => {
-    return {
-      name: 'dot-single',
-      color: props.color, type: 'entypo',
-      iconStyle: props.iconStyle
-    }
-  }
+
+  const openMessages = () => {
+    navigation.push('Chats')
+  };
+
+  const rightIcon = <Icon name="check-all" style={{
+    marginTop: 3,
+    color: "#3888db",
+    fontSize: 18,
+    width: 18,
+    height: 18
+  }}></Icon>;
+
+  const cBadge = <CustomBadge
+    height={20}
+    width={20}
+    borderRadius={50}
+    count={5} backgroundColor={'#3399ff'} textColor={'white'} />;
   return (
     <View style={styles.container}>
       <SearchBarInput />
 
       <ScrollView style={styles.container}>
-        {/* {
-    chartData.map((l, i) => (
-      <View key={i+1}>
-        <ListItemWithAvatar 
-          onPress={() => navigation.push('Chats')}
-          leftAvatar={ <ListItemAvatar uri={l.avatar_url}
-                        showRounded={true}
-                        size={'medium'}
-                        smallIconOnAvatar={smallIconOnAvatar({backgroundColor:l.color, color: l.color ? l.color : 'grey',
-                              iconStyle: {backgroundColor: l.color, borderColor: 'white', 
-                              borderWidth: 1, borderRadius: 50}})}
-                        showEditButton={true} // if ture will show smallIcon
-                        title={l.name.substring(0, 2).toUpperCase()}
-                        /> }
-            {...l}
-            index={i} 
-            key={i+3} 
-            showEditButton />
-      <View key={i+2} style={{ borderBottomColor: '#ececec',marginLeft:70,marginRight:10,marginTop:-5,
-      borderBottomWidth: 1}}>
-      </View>
-      </View>
-    // <Text>{i}</Text>
-    ))
-  } */}
-
-        <View >
-
-          <View style={styles.imageRow}>
-            <CircleAvatar url={'https://raw.githubusercontent.com/AboutReact/sampleresource/master/old_logo.png'}
-            />
-
-
-            <View style={styles.annaFailStackColumn}>
-              <View style={styles.annaFailStack}>
-                <Text style={styles.annaFail}>Anna Fail</Text>
-
-              </View>
-              <Text style={styles.loremIpsum}>Lorem Ipsum</Text>
-            </View>
-            <View style={styles.rightListContent}>
-              <Icon name="check-all" style={styles.icon}></Icon>
-
-              <View style={styles.loremIpsum3Column}>
-                <Text style={styles.loremIpsum3}>09.40pm</Text>
-                <View style={{marginRight: 5}}>
-                  <CustomizedBadge count={5} backgroundColor={'#3399ff'} textColor={'white'} />
-                </View>
+        {
+          chatData.map((chat, i) => {
+            return <View key={i + 1}>
+              <UserListView
+                url={chat.avatar}
+                onClickFunction = { openMessages }
+                avatarTitle={chat.name.substring(0, 2).toUpperCase()}
+                mainLabel={chat.name}
+                subLabel={chat.scope}
+                rightIcon={chat.lastActiveAt ? rightIcon : null}
+                rightLabel={moment(chat.joinedAt).format('HH:MM A')}
+                rightContentBadge={cBadge}
+              />
+              <View key={i + 2} style={{
+                borderBottomColor: '#ececec', marginLeft: 70, marginRight: 10, marginTop: -5,
+                borderBottomWidth: 1
+              }}>
               </View>
             </View>
-          </View>
-        </View>
-
+          })
+        }
       </ScrollView>
 
     </View>

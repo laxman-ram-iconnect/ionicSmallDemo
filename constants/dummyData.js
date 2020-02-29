@@ -1,48 +1,58 @@
-export const chartData = [
+export const chatData = [
   {
-    name: 'Amy Farhan',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President',
-    color: 'green',
-    messageSent: true,
-    messageCount: 6,
-    sentDate: 'JAN 01'
+     "uid": "superhero1",
+     "name": "Iron Man",
+     "avatar": "https://data.cometchat.com/assets/images/avatars/ironman.png",
+     "status": "offline",
+     "role": "default",
+     "lastActiveAt": 1582373693,
+     "scope": "admin",
+     "joinedAt": 1578291575,
+     "createdAt": 1569315855,
+     "updatedAt": 1579683053
   },
   {
-    name: 'Chris Jackson',
-    subtitle: 'Vice Chairman',
-    color: 'orange',
-    messageSent: true,
-    messageCount: 7,
-    sentDate: 'JAN 01'
+     "uid": "superhero5",
+     "name": "Cyclops",
+     "avatar": "https://data-us.cometchat.io/assets/images/avatars/cyclops.png",
+     "status": "offline",
+     "role": "default",
+     "lastActiveAt": 1581511512,
+     "scope": "participant",
+     "joinedAt": 1578290188,
+     "createdAt": 1569315855
   },
   {
-    name: 'Amy Farhan',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President',
-    color: 'green',
-    messageSent: true,
-    messageCount: 3,
-    sentDate: 'JAN 01'
+     "uid": "adi",
+     "name": "adi",
+     "status": "offline",
+     "role": "default",
+     "lastActiveAt": 1582193470,
+     "scope": "participant",
+     "joinedAt": 1578290166,
+     "createdAt": 1570706471
   },
   {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman',
-    color: 'orange',
-    messageCount: 9,
-    sentDate: 'JAN 01'
+     "uid": "superhero2",
+     "name": "Captain America",
+     "avatar": "https://data-us.cometchat.io/assets/images/avatars/captainamerica.png",
+     "status": "offline",
+     "role": "default",
+     "lastActiveAt": 1582265510,
+     "scope": "participant",
+     "joinedAt": 1578290164,
+     "createdAt": 1569315855
   },
   {
-    name: 'Amy Farhan',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President',
-    color: 'green',
-    messageCount: 0,
-    sentDate: 'JAN 01'
+     "uid": "jeet",
+     "name": "jeet",
+     "status": "offline",
+     "role": "default",
+     "lastActiveAt": 1572244845,
+     "scope": "participant",
+     "joinedAt": 1577279244,
+     "createdAt": 1571141213
   }
-  // ... // more items
-
 ];
 
 export const contactData = [{

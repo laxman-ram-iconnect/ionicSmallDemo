@@ -242,3 +242,57 @@ export const CustomBadge = (props) => {
 // });
 
 // export default Untitled;
+
+
+{/* {
+    chartData.map((l, i) => (
+      <View key={i+1}>
+        <ListItemWithAvatar 
+          onPress={() => navigation.push('Chats')}
+          leftAvatar={ <ListItemAvatar uri={l.avatar_url}
+                        showRounded={true}
+                        size={'medium'}
+                        smallIconOnAvatar={smallIconOnAvatar({backgroundColor:l.color, color: l.color ? l.color : 'grey',
+                              iconStyle: {backgroundColor: l.color, borderColor: 'white', 
+                              borderWidth: 1, borderRadius: 50}})}
+                        showEditButton={true} // if ture will show smallIcon
+                        title={l.name.substring(0, 2).toUpperCase()}
+                        /> }
+            {...l}
+            index={i} 
+            key={i+3} 
+            showEditButton />
+      <View key={i+2} style={{ borderBottomColor: '#ececec',marginLeft:70,marginRight:10,marginTop:-5,
+      borderBottomWidth: 1}}>
+      </View>
+      </View>
+    // <Text>{i}</Text>
+    ))
+  } */}
+
+        {/* <TouchableOpacity onPress={() => navigation.push('Chats')}>
+
+          <View style={styles.imageRow}>
+            <CircleAvatar url={'https://raw.githubusercontent.com/AboutReact/sampleresource/master/old_logo.png'}
+            />
+
+
+            <View style={styles.annaFailStackColumn}>
+              <View style={styles.annaFailStack}>
+                <Text style={styles.annaFail}>Anna Fail</Text>
+
+              </View>
+              <Text style={styles.loremIpsum}>Lorem Ipsum</Text>
+            </View>
+            <View style={styles.rightListContent}>
+              <Icon name="check-all" style={styles.icon}></Icon>
+
+              <View style={styles.loremIpsum3Column}>
+                <Text style={styles.loremIpsum3}>09.40pm</Text>
+                <View style={{marginRight: 5}}>
+                  <CustomizedBadge count={5} backgroundColor={'#3399ff'} textColor={'white'} />
+                </View>
+              </View>
+            </View>
+          </View>
+        </TouchableOpacity> */}
