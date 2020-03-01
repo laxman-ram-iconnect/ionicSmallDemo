@@ -14,12 +14,12 @@ export default function LinksScreen() {
       <ScrollView style={styles.container}>
         {
           contactData.map((l, i) => (
-            <React.Fragment>
+            <React.Fragment key={i+3}>
               <Text style={{
                 backgroundColor: '#fff', marginLeft: 16, marginTop: 3,
                 color: 'rgba(20, 20, 20, 0.7)'
               }}
-                key={i}>{l.group}</Text>
+                key={i + 4}>{l.group}</Text>
               {l.data.map((ins, indx) => (
                 <View key={indx + 1}>
                   <ContactView

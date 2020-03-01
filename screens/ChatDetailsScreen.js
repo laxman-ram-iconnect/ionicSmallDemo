@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ScrollView, KeyboardAvoidingView, TextInput, TouchableHighlight, Keyboard } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, KeyboardAvoidingView, TextInput, TouchableNativeFeedback, Keyboard } from 'react-native';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
 import AutogrowInput from 'react-native-autogrow-input';
 import { Avatar } from "react-native-elements";
@@ -33,7 +33,7 @@ export default class ChatView extends Component {
         },
         headerLeft: (props1) => {
           return ( /* Your custom header */
-            <TouchableHighlight onPress={props1.onPress}>
+            <TouchableNativeFeedback onPress={props1.onPress}>
               <View style={{ marginLeft: 12, flexDirection: 'row' }}>
                 <Ionicons name="ios-arrow-back" style={{
                   fontSize: 27,
@@ -46,7 +46,7 @@ export default class ChatView extends Component {
                   <Text style={{ color: '#3399ff', fontWeight: '500', fontSize: 18 }}>Chats</Text>
                 </View>
               </View>
-            </TouchableHighlight>
+            </TouchableNativeFeedback>
           )
         },
         headerRight: (rightProps) => {
