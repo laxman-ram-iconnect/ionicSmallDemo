@@ -107,31 +107,45 @@ export const contactData = [{
 ]
 
 export const groupData = [
-    {
-      name: 'Valley View Group',
-      avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-      subtitle: 'Public'
-    },
-    {
-      name: 'Tech Support',
-      avatar_url: 'https://www.searchpng.com/wp-content/uploads/2019/02/Deafult-Profile-Pitcher.png',
-      subtitle: 'Public'
-    },
-    {
-      name: 'Family',
-      avatar_url: 'https://img.favpng.com/7/12/17/family-euclidean-vector-png-favpng-k5SMvbkpAKXEkqUdSg07eyQRV.jpg',
-      subtitle: 'Public'
-    },
-    {
-      name: 'Developer Circle',
-      avatar_url: 'https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/challenge_thumbnails/000/898/077/datas/original.png',
-      subtitle: 'Public'
-    },
-    {
-      name: 'Backers Valley',
-      avatar_url: 'https://lh3.googleusercontent.com/proxy/qDJhy7hzsEUSwLTvNN_gnjDgj25L3fXEKBeOriHgi9B50Nvsz2afGEFZV7Hr5RFkM5vkxoC93F_1nRZ_VHdYGV1Ft-eJ6xPVPD0OX-G3qdKEq6RhUKVjake8A4jLHHm_EEleT8gFUg',
-      subtitle: 'Public'
-    }
-    // ... // more items
-  
-  ];
+  {
+      "guid": "123",
+      "name": "test 123",
+      "type": "public",
+      "createdAt": 1582291457,
+      "owner": "superhero1",
+      "membersCount": 1,
+      "avatar": 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg'
+  },
+  {
+      "guid": "6h6hb",
+      "name": "ybybyb",
+      "type": "public",
+      "createdAt": 1582290988,
+      "owner": "testuser11",
+      "membersCount": 1
+  },
+  {
+      "guid": "abcd",
+      "name": "ABCD",
+      "type": "public",
+      "createdAt": 1581167041,
+      "owner": "superhero4",
+      "membersCount": 2,
+      "avatar": 'https://lh3.googleusercontent.com/proxy/qDJhy7hzsEUSwLTvNN_gnjDgj25L3fXEKBeOriHgi9B50Nvsz2afGEFZV7Hr5RFkM5vkxoC93F_1nRZ_VHdYGV1Ft-eJ6xPVPD0OX-G3qdKEq6RhUKVjake8A4jLHHm_EEleT8gFUg'
+  },
+  {
+      "guid": "add_members_to_group",
+      "name": "Add Members to Group",
+      "type": "public",
+      "createdAt": 1579149680,
+      "owner": "superhero1",
+      "membersCount": 3
+  },
+  {
+      "guid": "demogroup",
+      "name": "Mayur",
+      "type": "public",
+      "createdAt": 1575959170,
+      "owner": "app_system",
+      "membersCount": 5
+  }];

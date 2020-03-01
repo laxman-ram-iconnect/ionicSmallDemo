@@ -49,7 +49,7 @@ export default function HomeScreen({ navigation }) {
                 status={chat.status}
               />
               <View key={i + 2} style={{
-                borderBottomColor: '#ececec', marginLeft: 70, marginRight: 10, marginTop: -5,
+                borderBottomColor: '#ececec', marginLeft: 70, marginRight: 16, marginTop: -5,
                 borderBottomWidth: 1
               }}>
               </View>

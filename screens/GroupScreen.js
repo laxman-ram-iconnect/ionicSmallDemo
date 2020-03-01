@@ -3,30 +3,31 @@ import { StyleSheet, Text, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
 import SearchBarInput from '../components/SearchBar';
-import ListItemWithAvatar, {ListItemAvatar} from '../components/AvatarForList';
 import { groupData } from '../constants/dummyData';
+import GroupView from '../components/uiComponents/GroupView';
 
 export default function GroupScreen() {
   return (
     <View style={styles.container}>
-      <SearchBarInput/>
+      <SearchBarInput />
 
       <ScrollView style={styles.container}>
-      {
-    groupData.map((l, i) => (
-      
-       <View key={i+ 1}>
-          <ListItemWithAvatar
-          leftAvatar={ <ListItemAvatar showRounded={true}
-                        size={'medium'} uri={l.avatar_url}
-                         /> } 
-          {...l} index={i} key={i+ 3} />
-        <View key={i+2 } style={{ borderBottomColor: '#ececec',marginLeft:70,marginRight:10,marginTop:-5,borderBottomWidth: 1}}></View>
-      </View>
-      // <Text>{i}</Text>
-      
-    ))
-  }
+        {
+          groupData.map((l, i) => (
+
+            <View key={i + 1}>
+              <GroupView
+                url={l.avatar}
+                avatarTitle={''}
+                mainLabel={l.name}
+                subLabel={l.type}
+              />
+              <View key={i + 2} style={{ borderBottomColor: '#ececec', marginLeft: 70, marginRight: 16, marginTop: -5, borderBottomWidth: 1 }}></View>
+            </View>
+            // <Text>{i}</Text>
+
+          ))
+        }
       </ScrollView>
 
     </View>

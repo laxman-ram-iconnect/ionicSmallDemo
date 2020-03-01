@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, ScrollView, KeyboardAvoidingView, TextInput, TouchableHighlight, Keyboard } from 'react-native';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
+import AutogrowInput from 'react-native-autogrow-input';
+import { Avatar } from "react-native-elements";
+import AntDesign from "react-native-vector-icons/AntDesign";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import MessageBubble from "../components/MassageBubble";
 import InputBar from "../components/InputBar";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import ImageAvatar from '../components/uiComponents/ImageAvatar';
 //used to make random-sized messages
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -17,7 +21,7 @@ export default class ChatView extends Component {
     super(props);
 
     const { navigation } = props;
-    console.log(props.navigation)
+
     navigation.setOptions(
       {
         headerTitleStyle: { textAlign: 'center', flex: 1 },
@@ -28,7 +32,7 @@ export default class ChatView extends Component {
           </View>
         },
         headerLeft: (props1) => {
-          console.log(props1); return ( /* Your custom header */
+          return ( /* Your custom header */
             <TouchableHighlight onPress={props1.onPress}>
               <View style={{ marginLeft: 12, flexDirection: 'row' }}>
                 <Ionicons name="ios-arrow-back" style={{
@@ -46,7 +50,7 @@ export default class ChatView extends Component {
           )
         },
         headerRight: (rightProps) => {
-          return <View style={{marginRight: 12}}>
+          return <View style={{ marginRight: 12 }}>
             <ImageAvatar
               height={35}
               width={35}
