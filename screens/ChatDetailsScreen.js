@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, ScrollView, KeyboardAvoidingView, TextInput, TouchableNativeFeedback, Keyboard } from 'react-native';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
-import AutogrowInput from 'react-native-autogrow-input';
-import { Avatar } from "react-native-elements";
-import AntDesign from "react-native-vector-icons/AntDesign";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import MessageBubble from "../components/MassageBubble";
 import InputBar from "../components/InputBar";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -51,7 +46,7 @@ export default class ChatView extends Component {
         },
         headerRight: (rightProps) => {
           return <View style={{ marginRight: 12 }}>
-            <ImageAvatar
+            <CustomAvatar
               height={35}
               width={35}
               borderRadius={50}

@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, Text, TouchableNativeFeedback, View } from 'react-native';
-import ImageAvatar from './ImageAvatar';
-import TitleAvatar from './TitleAvatar';
+import CustomAvatar from './CustomAvatar';
 import CustomBadge from './CustomBadge';
-import StatusIndicator from './StatusIndicator';
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default GroupView = (props) => {
     return (
@@ -13,17 +10,14 @@ export default GroupView = (props) => {
             <View style={styles.imageRow}>
                 <View style={{ flexDirection: 'row' }}>
                     {
-                        props.url ?
-                            <ImageAvatar
-                                height={50}
-                                width={50}
-                                borderRadius={50}
-                                url={props.url}
-                            /> : <TitleAvatar height={50}
-                                width={50}
-                                borderRadius={50}
-                                backgroundColor={'lightgrey'}
-                                title={props.avatarTitle} />
+                        <CustomAvatar
+                            height={50}
+                            width={50}
+                            borderRadius={50}
+                            url={props.url}
+                            backgroundColor={'lightgrey'}
+                            title={props.avatarTitle}
+                        />
                     }
 
 
